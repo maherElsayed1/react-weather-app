@@ -1,5 +1,14 @@
-body {
+* {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
-/*# sourceMappingURL=index.css.map */
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #edf6fa;
+}
