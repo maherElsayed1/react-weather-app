@@ -1,0 +1,19 @@
+.weather-header {
+  text-align: center;
+}
+.weather-header__list {
+  list-style: none;
+}
+.weather-header__list-item {
+  display: inline-block;
+  margin: 0 40px 40px;
+  font-size: 34px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #333338;
+  cursor: pointer;
+}
+.weather-header__list-item.selected {
+  font-weight: 700;
+  color: #5fb0e8;
+}
