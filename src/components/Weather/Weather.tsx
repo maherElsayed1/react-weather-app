@@ -38,11 +38,13 @@ export default class Weather extends Component<Props, State> {
     }
 
     getData = async () => {
-        this.setState({
+        this.setState((prevState) => ({
+            ...prevState,
             weatherData: {
-                loading: true
+                ...prevState.weatherData,
+                loading: true,
             }
-        })
+        }))
         try {
             const response = await axios.get<WeatherTypes, any>("https://api.openweathermap.org/data/2.5/forecast", {
                 params: {
@@ -52,14 +54,16 @@ export default class Weather extends Component<Props, State> {
                     units: "metric"
                 }
             });
-            this.setState({
+            this.setState((prevState) => ({
+                ...prevState,
                 weatherData: {
                     loading: false,
                     data: {
-                        [this.state.city as string]: response.data
+                        ...prevState.weatherData?.data,
+                        [this.state.city as string]: response.data,
                     }
                 }
-            });
+            }));
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 this.setState({
@@ -88,6 +92,14 @@ export default class Weather extends Component<Props, State> {
 
     componentDidMount() {
         this.getData();
+    }
+
+    componentDidUpdate(prevProps: Props, prevState: State) {
+        if (prevState.city !== this.state.city) {
+            if (!this.state.weatherData?.data![this.state.city!]) {
+                this.getData();
+            }
+        }
     }
 
     handleCity = (city: string) => {
