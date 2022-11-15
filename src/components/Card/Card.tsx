@@ -4,7 +4,8 @@ import "./Card.css"
 import { CardTypes } from "./Card.types"
 
 type Props = {
-    cardData: CardTypes
+    cardData: CardTypes,
+    index: number
 }
 
 type State = {}
@@ -23,14 +24,13 @@ export default class Card extends Component<Props, State> {
                 </div>
                 <div className="weather-card__results">
                     <div className="weather-card__icon">
-                        <img src={`http://openweathermap.org/img/wn/${cardData?.weather[0]?.icon}@2x.png`} alt="" />
+                        <i className={`owf owf-${cardData?.weather[0]?.id}`}></i>
                     </div>
                     <div className="weather-card__temp">
                         <span>{cardData?.temp.max}°/{cardData?.temp.min}°</span>
-                        {isToday && <span className="weather-card__temp-description">{cardData?.weather[0]?.description}</span>}
+                        {this.props.index === 0 && <span className="weather-card__temp-description">{cardData?.weather[0]?.description}</span>}
                     </div>
                 </div>
-
             </div>
         )
     }
