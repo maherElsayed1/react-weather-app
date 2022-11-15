@@ -5,7 +5,8 @@ import { WeatherTypes } from "../Weather/Weather.types"
 import "./Cards.css"
 
 type Props = {
-    data: WeatherTypes | null
+    data: WeatherTypes | null,
+    isLoading: boolean
 }
 
 type State = {}
@@ -18,9 +19,11 @@ export default class Cards extends Component<Props, State> {
         return (
             <main className="weather-cards">
                 {
-                    this.props.data?.list?.map((cardData: CardTypes, index: number) => (
-                        <Card key={cardData.dt} cardData={cardData} index={index} />
-                    ))
+                    !this.props.isLoading ?
+                        this.props.data?.list?.map((cardData: CardTypes, index: number) => (
+                            <Card key={cardData.dt} cardData={cardData} index={index} />
+                        ))
+                        : <div className="loading">Loading ...</div>
                 }
             </main>
         )

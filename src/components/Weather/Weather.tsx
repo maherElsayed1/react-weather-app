@@ -113,10 +113,10 @@ export default class Weather extends Component<Props, State> {
             <div className="weather">
                 <div className="weather-container">
                     {
-                        (!this.state.weatherData?.loading && !this.state.weatherData?.error) ?
+                        (!this.state.weatherData?.error) ?
                             <>
                                 <Header handleCity={this.handleCity} cities={cities} selectedCity={this.state.city!} />
-                                <Cards data={!this.state.weatherData?.loading ? this.state.weatherData?.data![this.state.city!]! : null} />
+                                <Cards data={!this.state.weatherData?.loading ? this.state.weatherData?.data![this.state.city!]! : null} isLoading={this.state.weatherData?.loading!} />
                             </>
                             :
                             <div className="error-screen">
