@@ -46,7 +46,7 @@ export default class Weather extends Component<Props, State> {
             }
         }))
         try {
-            const response = await axios.get<WeatherTypes, any>("https://api.openweathermap.org/data/2.5/forecast", {
+            const response = await axios.get<WeatherTypes, any>("https://api.openweathermap.org/data/2.5/forecast/daily", {
                 params: {
                     q: this.state.city,
                     appid: OPEN_WEATHER_MAP_KEY,
