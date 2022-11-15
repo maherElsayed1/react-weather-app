@@ -112,8 +112,17 @@ export default class Weather extends Component<Props, State> {
         return (
             <div className="weather">
                 <div className="weather-container">
-                    <Header handleCity={this.handleCity} cities={cities} selectedCity={this.state.city!} />
-                    <Cards data={!this.state.weatherData?.loading ? this.state.weatherData?.data![this.state.city!]! : null} />
+                    {
+                        (!this.state.weatherData?.loading && !this.state.weatherData?.error) ?
+                            <>
+                                <Header handleCity={this.handleCity} cities={cities} selectedCity={this.state.city!} />
+                                <Cards data={!this.state.weatherData?.loading ? this.state.weatherData?.data![this.state.city!]! : null} />
+                            </>
+                            :
+                            <div className="error-screen">
+                                {this.state.weatherData.error}
+                            </div>
+                    }
                 </div>
             </div>
         )
