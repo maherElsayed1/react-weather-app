@@ -1,6 +1,5 @@
 import axios from "axios"
 import React, { Component } from 'react'
-import { OPEN_WEATHER_MAP_KEY } from "../../constants"
 import Cards from "../Cards/Cards"
 import Header from "../Header/Header"
 import "./Weather.css"
@@ -49,7 +48,7 @@ export default class Weather extends Component<Props, State> {
             const response = await axios.get<WeatherTypes, any>("https://api.openweathermap.org/data/2.5/forecast/daily", {
                 params: {
                     q: this.state.city,
-                    appid: OPEN_WEATHER_MAP_KEY,
+                    appid: process.env.REACT_APP_OPEN_WEATHER_MAP_KEY,
                     cnt: 5,
                     units: "metric"
                 }
