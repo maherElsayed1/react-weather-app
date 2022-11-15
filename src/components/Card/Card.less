@@ -7,7 +7,7 @@
     padding-top: 35px;
 
     &__title {
-        font-weight: 300;
+        font-weight: 200;
         font-size: 27px;
         color: #4d4e56;
     }
@@ -15,15 +15,18 @@
     &__icon {
         width: 95px;
         margin: 0 auto;
-        img {
-            width: 100%;
-            height: auto;
-        }
+        font-size: 70px;
+        text-align: center;
+        color: #2e4369;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 115px;
     }
 
     &__temp {
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 24px;
         span {
             display: block;
@@ -31,7 +34,7 @@
     }
 
     &:first-child {
-        min-height: 320px;
+        min-height: 380px;
         grid-column: 1 / -1;
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
@@ -44,19 +47,21 @@
             }
 
             &__title {
-                font-size: 36px;
+                font-size: 40px;
                 margin-bottom: 30px;
             }
 
             &__icon {
                 width: 180px;
-                height: 180px;
+                height: 150px;
+                font-size: 150px;
             }
 
             &__temp {
-                font-size: 70px;
+                font-size: 65px;
+                font-weight: 600;
                 &-description {
-                    font-weight: 300;
+                    font-weight: 200;
                     font-size: 32px;
                 }
             }
