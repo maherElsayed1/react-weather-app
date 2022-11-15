@@ -3,15 +3,27 @@
 }
 .weather-header__list {
   list-style: none;
+  margin-bottom: 30px;
 }
 .weather-header__list-item {
   display: inline-block;
-  margin: 20px 50px 40px;
+  margin: 20px 50px 10px;
   font-size: 34px;
   font-weight: 200;
   text-transform: uppercase;
   color: #333338;
   cursor: pointer;
+}
+@media (max-width: 770px) {
+  .weather-header__list-item {
+    margin: 20px 20px 10px;
+  }
+}
+@media (max-width: 580px) {
+  .weather-header__list-item {
+    margin: 20px 10px 10px;
+    font-size: 28px;
+  }
 }
 .weather-header__list-item.selected {
   font-weight: 700;

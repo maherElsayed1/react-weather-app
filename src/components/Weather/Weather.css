@@ -1,5 +1,10 @@
 .weather {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .weather-container {
   width: 950px;

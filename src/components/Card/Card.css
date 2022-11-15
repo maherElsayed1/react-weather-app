@@ -27,6 +27,11 @@
   font-weight: 500;
   font-size: 24px;
 }
+@media (max-width: 500px) {
+  .weather-card__temp {
+    font-size: 20px;
+  }
+}
 .weather-card__temp span {
   display: block;
 }
@@ -41,6 +46,12 @@
   display: flex;
   align-items: center;
 }
+@media (max-width: 770px) {
+  .weather-card:first-child .weather-card__results {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
 .weather-card:first-child .weather-card__title {
   font-size: 40px;
   margin-bottom: 30px;
@@ -53,6 +64,16 @@
 .weather-card:first-child .weather-card__temp {
   font-size: 65px;
   font-weight: 600;
+}
+@media (max-width: 770px) {
+  .weather-card:first-child .weather-card__temp {
+    font-size: 55px;
+  }
+}
+@media (max-width: 500px) {
+  .weather-card:first-child .weather-card__temp {
+    font-size: 45px;
+  }
 }
 .weather-card:first-child .weather-card__temp-description {
   font-weight: 200;
