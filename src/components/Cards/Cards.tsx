@@ -18,8 +18,8 @@ export default class Cards extends Component<Props, State> {
         return (
             <main className="weather-cards">
                 {
-                    this.props.data?.list?.map((cardData: CardTypes) => (
-                        <Card key={cardData.dt} cardData={cardData} />
+                    this.props.data?.list?.map((cardData: CardTypes, index: number) => (
+                        <Card key={cardData.dt} cardData={cardData} index={index} />
                     ))
                 }
             </main>
